@@ -5,3 +5,4 @@ server/node_modules/
 # Optional: Ignore environment variables and OS-specific files
 .env
 .DS_Store
+

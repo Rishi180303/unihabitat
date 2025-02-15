@@ -1,15 +1,60 @@
 // src/components/HomePage.js
 import React from 'react';
 
+const Hero = () => (
+  <section style={{
+    background: 'rgb(209, 191, 177)',  // using the specified color
+    padding: '100px 20px',
+    textAlign: 'center'
+  }}>
+    <h1 style={{ fontSize: '3rem', margin: '0' }}>Welcome to Unihabitat</h1>
+    <p style={{ fontSize: '1.2rem', margin: '20px 0' }}>
+      Your one-stop social network for student housing.
+    </p>
+  </section>
+);
+
+const Features = () => {
+  const featureStyle = {
+    width: '80%',
+    margin: '20px 0',
+    textAlign: 'center',
+    border: '1px solid #ddd',
+    padding: '20px',
+    borderRadius: '8px',
+    backgroundColor: '#fff'
+  };
+
+  return (
+    <section style={{
+      display: 'flex',
+      flexDirection: 'column',  // stack items vertically
+      alignItems: 'center',
+      padding: '40px 20px',
+      background: 'rgb(209, 191, 177)' // consistent background color
+    }}>
+      <div style={featureStyle}>
+        <h2>Verified Users</h2>
+        <p>Every user is verified with a .edu email, ensuring a trusted community.</p>
+      </div>
+      <div style={featureStyle}>
+        <h2>University Specific</h2>
+        <p>Find roommates and subleases exclusively within your university network.</p>
+      </div>
+      <div style={featureStyle}>
+        <h2>Trust & Safety</h2>
+        <p>Our rigorous verification process and secure authentication ensure your safety.</p>
+      </div>
+    </section>
+  );
+};
+
 const HomePage = () => {
   return (
-    <main style={{ padding: '20px', textAlign: 'center' }}>
-      <h2>Welcome to Unihabitat!</h2>
-      <p>
-        Find roommates, subleases, and more tailored to your university community.
-      </p>
-      {/* Later you can add a call-to-action button or further content */}
-    </main>
+    <div>
+      <Hero />
+      <Features />
+    </div>
   );
 };
 

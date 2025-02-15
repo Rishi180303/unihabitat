@@ -3,8 +3,8 @@ import React from 'react';
 
 const Hero = () => (
   <section style={{
-    background: 'rgb(209, 191, 177)',  // using the specified color
-    padding: '100px 20px',
+    background: 'white',
+    padding: '100px 20px', // extra padding to clear the fixed header
     textAlign: 'center'
   }}>
     <h1 style={{ fontSize: '3rem', margin: '0' }}>Welcome to Unihabitat</h1>
@@ -22,16 +22,16 @@ const Features = () => {
     border: '1px solid #ddd',
     padding: '20px',
     borderRadius: '8px',
-    backgroundColor: '#fff'
+    backgroundColor: '#e0e0e0' // grey background for feature boxes
   };
 
   return (
     <section style={{
       display: 'flex',
-      flexDirection: 'column',  // stack items vertically
+      flexDirection: 'column', // stack items vertically
       alignItems: 'center',
       padding: '40px 20px',
-      background: 'rgb(209, 191, 177)' // consistent background color
+      background: 'white'
     }}>
       <div style={featureStyle}>
         <h2>Verified Users</h2>

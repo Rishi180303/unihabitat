@@ -1,18 +1,19 @@
 // src/components/Header.js
 import React from 'react';
 
-const Header = () => {
+const Header = ({ onSignUpClick }) => {
   const headerStyle = {
-    backgroundColor: 'rgb(209, 191, 177)',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // translucent white
     padding: '10px 20px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    position: 'fixed', // Make the header fixed
+    position: 'fixed', // sticky header
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 1000, // Ensure it appears above other content
+    zIndex: 1000,
+    color: '#000',
   };
 
   const titleStyle = {
@@ -22,7 +23,7 @@ const Header = () => {
 
   const buttonContainerStyle = {
     display: 'flex',
-    gap: '10px', // space between buttons
+    gap: '10px',
   };
 
   const buttonStyle = {
@@ -32,14 +33,14 @@ const Header = () => {
     padding: '8px 16px',
     cursor: 'pointer',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    color: '#000',
   };
 
   return (
     <header style={headerStyle}>
       <div style={titleStyle}>Unihabitat</div>
       <div style={buttonContainerStyle}>
-        <button style={buttonStyle}>Log in</button>
-        <button style={buttonStyle}>Sign up</button>
+        <button style={buttonStyle} onClick={onSignUpClick}>Sign up</button>
       </div>
     </header>
   );

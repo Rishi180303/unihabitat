@@ -1,5 +1,6 @@
+// client/src/App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import Dashboard from './components/Dashboard';
@@ -8,20 +9,17 @@ import SignUpModal from './components/SignUpModal';
 
 function App() {
   const [showSignUp, setShowSignUp] = useState(false);
-  const appStyle = { marginTop: '70px' };
 
   return (
-    <Router>
+    <BrowserRouter>
       <Header onSignUpClick={() => setShowSignUp(true)} />
-      {showSignUp && <SignUpModal onClose={() => setShowSignUp(false)} />}
-      <div style={appStyle}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
       <Footer />
-    </Router>
+      <SignUpModal open={showSignUp} onClose={() => setShowSignUp(false)} />
+    </BrowserRouter>
   );
 }
 
